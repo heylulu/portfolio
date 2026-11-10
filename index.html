@@ -31,115 +31,90 @@
 <header class="hero wrap">
   <p class="eyebrow">Designer &amp; Researcher</p>
   <h1>I design and study interactive systems.</h1>
-  <p class="lede">
-    I take work from the first interview to a working system — framing the problem,
-    designing the interaction, building the prototype, and studying how it lands with
-    the people who use it. I run my own studies, prototype in code, and publish what
-    I learn.
-  </p>
-  <div class="btn-row">
-    <a class="btn" href="#work">Selected work</a>
-    <a class="btn" href="files/cv.pdf">Download CV</a>
-  </div>
 </header>
 
-<section id="work" class="wrap">
-  <p class="eyebrow">Selected work</p>
-  <h2>Case studies</h2>
+<section id="work" class="wrap work">
+  <h2 class="visually-hidden">Projects</h2>
+  <div class="filters" role="group" aria-label="Filter projects" hidden>
+    <button type="button" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-filter="research" aria-pressed="false">Research</button>
+    <button type="button" data-filter="ui" aria-pressed="false">UI/UX</button>
+    <button type="button" data-filter="web" aria-pressed="false">Web</button>
+    <button type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+    <button type="button" data-filter="product" aria-pressed="false">Products</button>
+    <button type="button" data-filter="brand" aria-pressed="false">Brand</button>
+    <button type="button" data-filter="print" aria-pressed="false">Graphic/Prints</button>
+    <button type="button" data-filter="prototypes" aria-pressed="false">Prototypes</button>
+  </div>
 
-  <div class="work-list">
-
-    <article class="card">
-      <div class="card-media diagram">
-        <img src="img/design-approach.jpg" alt="A concentric diagram of the design approach: four design aspects — descriptive information, social cues, ambiguity design and ambient design — circle a central design goal, ringed by technological constraints and contextual factors, with experiential qualities on the outer ring.">
-      </div>
-      <div class="card-body">
-        <h3><a href="awareness.html">Designing awareness for hybrid teams</a></h3>
-        <p class="muted">
-          Designing and testing systems that carry a colleague's presence without demanding
-          attention. Three display concepts, a comparative study with 24 people, and a
-          working deployment with five teams in their own workplaces.
-        </p>
-        <p><a href="awareness.html">Read the case study →</a></p>
-        <div class="tags">
-          <span class="tag">End-to-end ownership</span>
-          <span class="tag">Sensor data</span>
-          <span class="tag">Ambient interfaces</span>
-          <span class="tag">Field deployment</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-media">
-        <img src="img/medease/thumbnail.jpg" alt="An older man at a kitchen table taking a pill from a sachet, with the MedEase box beside him.">
-      </div>
-      <div class="card-body">
-        <h3><a href="medease.html">MedEase</a></h3>
-        <p class="muted">
-          A low-cost pill box and the packaging system around it, designed so that taking
-          medication at the right interval is the easy thing to do. Packaging, information
-          design, product model, app concept, and a working Arduino prototype.
-        </p>
-        <p><a href="medease.html">Read the case study →</a></p>
-        <div class="tags">
-          <span class="tag">Product design</span>
-          <span class="tag">Information design</span>
-          <span class="tag">Packaging</span>
-          <span class="tag">Physical prototype</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-media">
-        <img src="img/icerehab/thumbnail.jpg" alt="A person balancing on one leg in a living room, in front of a screen running the IceRehab balance game.">
-      </div>
-      <div class="card-body">
-        <h3><a href="icerehab.html">IceRehab</a></h3>
-        <p class="muted">
-          A balance-training game for ankle rehabilitation, controlled by shifting weight
-          on a pressure pad. Built from the clinical exercise protocol, prototyped, and
-          tried at home for a week by two people recovering from a sprain.
-        </p>
-        <p><a href="icerehab.html">Read the case study →</a></p>
-        <div class="tags">
-          <span class="tag">Gamification</span>
-          <span class="tag">Sensor input</span>
-          <span class="tag">Health</span>
-          <span class="tag">User test</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-media">
-        <img src="img/uiux/iot-mockup.jpg" alt="A sensor monitoring dashboard shown on a desktop monitor in an office.">
-      </div>
-      <div class="card-body">
-        <h3><a href="design-work.html">Interface &amp; visual design</a></h3>
-        <p class="muted">
-          Professional design work: an enterprise platform for a car brand's dealer network,
-          operational dashboards, e-commerce and corporate sites, a voice interface, identity
-          and print. Dense data at one end, brand at the other.
-        </p>
-        <p><a href="design-work.html">See the work →</a></p>
-        <div class="tags">
-          <span class="tag">UI design</span>
-          <span class="tag">Web</span>
-          <span class="tag">Enterprise tools</span>
-          <span class="tag">Brand &amp; print</span>
-        </div>
-      </div>
-    </article>
-
+  <div class="tgrid">
+    <a class="tcard" href="awareness.html" data-tags="research prototypes">
+      <img src="img/teasers/awareness.jpg" width="800" height="800" alt="A diagram of the design approach from the PhD research.">
+      <h3>Designing awareness for hybrid teams</h3>
+      <p>PhD research on displays that share office presence with remote colleagues</p>
+    </a>
+    <a class="tcard" href="medease.html" data-tags="product mobile prototypes">
+      <img src="img/teasers/medease.jpg" width="800" height="800" alt="An older man at a kitchen table taking a pill, with the MedEase box beside him.">
+      <h3>MedEase</h3>
+      <p>Pill box and packaging for taking medication on time</p>
+    </a>
+    <a class="tcard" href="icerehab.html" data-tags="research prototypes">
+      <img src="img/teasers/icerehab.jpg" width="800" height="800" alt="A person balancing on one leg in front of a screen running the IceRehab game.">
+      <h3>IceRehab</h3>
+      <p>Balance game for ankle rehabilitation</p>
+    </a>
+    <a class="tcard" href="design-work.html#sensor" data-tags="ui web">
+      <img src="img/teasers/sensor.jpg" width="800" height="800" alt="The sensor monitoring dashboard on a desktop monitor." loading="lazy" decoding="async">
+      <h3>Sensor monitoring console</h3>
+      <p>Dashboard for a building sensor network</p>
+    </a>
+    <a class="tcard" href="design-work.html#cadillac" data-tags="ui web mobile">
+      <img src="img/teasers/cadillac.jpg" width="800" height="800" alt="The mobile inventory screen of the dealer platform." loading="lazy" decoding="async">
+      <h3>Cadillac dealer platform</h3>
+      <p>Sales platform for a car dealer network</p>
+    </a>
+    <a class="tcard" href="design-work.html#yulan" data-tags="ui web brand">
+      <img src="img/teasers/yulan.jpg" width="800" height="800" alt="The top of the Yulan Home homepage." loading="lazy" decoding="async">
+      <h3>Yulan Home</h3>
+      <p>Online shop for wallpaper, fabric and home accessories</p>
+    </a>
+    <a class="tcard" href="design-work.html#voice" data-tags="ui">
+      <img src="img/teasers/voice.jpg" width="800" height="800" alt="The home screen of the voice assistant, with two isometric scenes." loading="lazy" decoding="async">
+      <h3>Voice-controlled home screen</h3>
+      <p>Screen for a smart-home voice assistant</p>
+    </a>
+    <a class="tcard" href="design-work.html#briefing" data-tags="ui mobile">
+      <img src="img/teasers/briefing.jpg" width="800" height="800" alt="The top of the subscriber version of the daily briefing page." loading="lazy" decoding="async">
+      <h3>Daily briefing subscription</h3>
+      <p>Mobile market briefing with a free and a paid version</p>
+    </a>
+    <a class="tcard" href="design-work.html#ilk" data-tags="ui web mobile print">
+      <img src="img/teasers/ilk.jpg" width="800" height="800" alt="The ilk London category page." loading="lazy" decoding="async">
+      <h3>ilk London</h3>
+      <p>Online shop for men&#x27;s grooming products</p>
+    </a>
+    <a class="tcard" href="design-work.html#industrial" data-tags="ui web mobile">
+      <img src="img/teasers/industrial.jpg" width="800" height="800" alt="The top of the industrial group homepage." loading="lazy" decoding="async">
+      <h3>Industrial group website</h3>
+      <p>Corporate site for an oil-services group</p>
+    </a>
+    <a class="tcard" href="design-work.html#identity" data-tags="brand">
+      <img src="img/teasers/identity.jpg" width="800" height="800" alt="Four logos: a bakery, a charity travel program, a charity shop and an elder-care service." loading="lazy" decoding="async">
+      <h3>Identity marks</h3>
+      <p>Logos for small businesses and non-profits</p>
+    </a>
+    <a class="tcard" href="design-work.html#posters" data-tags="print">
+      <img src="img/teasers/posters.jpg" width="800" height="800" alt="A campaign poster for a 2015 summer camp." loading="lazy" decoding="async">
+      <h3>Posters and product graphics</h3>
+      <p>Campaign poster and product graphics</p>
+    </a>
   </div>
 </section>
 
 <section class="wrap">
   <div class="narrow">
     <p class="eyebrow">About</p>
-    <h2>How I work</h2>
+    <h2>What I do</h2>
     <p>
       I am finishing a PhD in Industrial Design at Eindhoven University of Technology, on a
       single question: how a system can carry information about other people without becoming
@@ -190,6 +165,25 @@
   </div>
   <p>© 2026 Lu Liu</p>
 </footer>
+
+<script>
+(function () {
+  var bar = document.querySelector('.filters');
+  var cards = document.querySelectorAll('.tcard');
+  bar.hidden = false;
+  bar.addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-filter]');
+    if (!btn) return;
+    var f = btn.dataset.filter;
+    bar.querySelectorAll('button').forEach(function (b) {
+      b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+    });
+    cards.forEach(function (c) {
+      c.hidden = f !== 'all' && c.dataset.tags.split(' ').indexOf(f) === -1;
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

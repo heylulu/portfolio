@@ -341,3 +341,43 @@ video { width: 100%; height: auto; display: block; border-radius: 8px; backgroun
 
 /* cursor hint on the plates that open it */
 .shot > a { cursor: zoom-in; }
+
+
+/* ---------- homepage: one-sentence hero + square teaser grid ---------- */
+.hero h1 { max-width: 22ch; }
+.work { padding-top: 0; }
+section.work + section { border-top: 1px solid var(--rule); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.filters[hidden] { display: none; }
+.filters button {
+  font: inherit; font-size: 0.86rem; line-height: 1; cursor: pointer;
+  padding: 0.5rem 0.9rem; border-radius: 999px;
+  border: 1px solid var(--rule); background: transparent; color: var(--ink-soft);
+}
+.filters button:hover { border-color: var(--ink-faint); color: var(--ink); }
+.filters button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.filters button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.tgrid { display: grid; grid-template-columns: 1fr; gap: 2.2rem 1.5rem; }
+@media (min-width: 600px) { .tgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .tgrid { grid-template-columns: repeat(3, 1fr); gap: 2.6rem 1.8rem; } }
+
+.tcard { display: block; color: var(--ink); }
+.tcard[hidden] { display: none; }
+.tcard:hover { text-decoration: none; }
+.tcard img {
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  border-radius: 8px; background: var(--accent-bg);
+  transition: opacity .18s ease;
+}
+.tcard:hover img { opacity: 0.88; }
+.tcard h3 { margin: 0.85rem 0 0.2rem; font-size: 1rem; font-weight: 600; }
+.tcard p { margin: 0; font-size: 0.9rem; line-height: 1.45; color: var(--ink-soft); }
+.tcard:hover h3 { color: var(--accent); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.hero { padding-block: clamp(3.5rem, 9vw, 6rem) clamp(2rem, 4vw, 3rem); }
