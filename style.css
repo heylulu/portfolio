@@ -381,3 +381,11 @@ section.work + section { border-top: 1px solid var(--rule); }
   clip: rect(0 0 0 0); white-space: nowrap;
 }
 .hero { padding-block: clamp(3.5rem, 9vw, 6rem) clamp(2rem, 4vw, 3rem); }
+
+/* ---------- single project page (split from the old design-work gallery) ---------- */
+.proj-page { padding-top: clamp(2rem, 5vw, 3.5rem); }
+.proj-page h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); margin-bottom: 0.9rem; }
+.back { font-size: 0.9rem; margin: 0 0 1.8rem; }
+.back a { color: var(--ink-soft); }
+.back a:hover { color: var(--ink); }
+.proj-page + section { border-top: 1px solid var(--rule); }

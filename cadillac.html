@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadillac dealer platform — Lu Liu</title>
+<meta name="description" content="Sales platform for a car dealer network.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-name" href="index.html">Lu Liu</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="publications.html">Publications</a>
+      <a href="files/cv.pdf">CV</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- TODO Lu: add client / employer / year here if you want it named. -->
+<section class="proj proj-page wrap">
+  <p class="back"><a href="index.html#work">← All work</a></p>
+  <div class="proj-head">
+    <p class="proj-kind">Product UI · Web and mobile</p>
+    <h1>Cadillac dealer platform</h1>
+    <p class="muted">
+      An online platform for a car brand's sales department and its dealer network, replacing
+      a set of processes that ran on emailed spreadsheets and paper checklists. It does three
+      things: it lets dealers see and trade each other's <strong>advanced-stock-age cars</strong>,
+      it manages <strong>everyday sales information</strong> across four roles, and it makes the
+      <strong>POSM inspection paperless</strong>.
+    </p>
+    <p class="muted">
+      Four roles use the same data from different angles — head office, area managers,
+      dealers, and sales staff — so the design question throughout was less about screens than
+      about who sees what, and who is allowed to change it.
+    </p>
+    <div class="tags">
+      <span class="tag">Enterprise platform</span>
+      <span class="tag">Four user roles</span>
+      <span class="tag">Data density</span>
+      <span class="tag">Field audit tool</span>
+      <span class="tag">Web + mobile</span>
+    </div>
+    <p><a href="files/cadillac-platform.pdf">See the original presentation (PDF, 8 pages) →</a></p>
+  </div>
+
+  <figure class="shot">
+    <a href="img/uiux/cad-wireframe.jpg">
+      <img src="img/uiux/cad-wireframe.jpg" alt="Greyscale wireframes: two web page layouts above a row of four phone screens." loading="lazy" decoding="async">
+    </a>
+    <figcaption>Wireframes, before any of the below.</figcaption>
+  </figure>
+
+  <h3 class="proj-sub">01 &nbsp;Advanced-stock-age cars</h3>
+  <p class="muted narrow">
+    Cars that have sat too long in one dealer's warehouse are worth something to a dealer
+    somewhere else. Head office maintains the stock information on the desktop and chooses
+    which dealers a car is visible to; dealers browse and request; area managers accept or
+    reject those requests from their phone.
+  </p>
+
+  <div class="grid2 grid-even">
+    <figure class="shot">
+      <a href="img/uiux/cad-inventory.jpg">
+        <img src="img/uiux/cad-inventory.jpg" alt="Aged inventory table at head office: vehicle ID, model, trim, color, stock date and price, with confirm and delete actions on each row." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Head office edits the stock list.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-inv-mobile.jpg">
+        <img src="img/uiux/cad-inv-mobile.jpg" alt="Aged inventory on a phone, filtered by region, trim and age, each row a car with color and price." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Dealers search and request.</figcaption>
+    </figure>
+  </div>
+
+  <h3 class="proj-sub">02 &nbsp;Sales management</h3>
+  <p class="muted narrow">
+    Head office used to send quarterly targets to dealers as Excel tables. The platform does
+    not ask anyone to give that up: head office still uploads the spreadsheet it already
+    makes, and everything after that — issuing it, watching who has responded, confirming each
+    dealer's numbers — happens online. Changing the file format would have been the easy
+    design decision and the one that got the tool rejected.
+  </p>
+
+  <div class="grid2">
+    <figure class="shot">
+      <a href="img/uiux/cad-web-tasks.jpg">
+        <img src="img/uiux/cad-web-tasks.jpg" alt="Sales target module: in-progress confirmation tasks with start and end dates above a searchable, paginated history." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Head office: upload and send the file.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-web-matrix.jpg">
+        <img src="img/uiux/cad-web-matrix.jpg" alt="Quarterly target table: dealer codes down the side, four car models across the top, each split into three months and a quarter total." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Dealers &times; models &times; months, with quarter totals.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-web-verify.jpg">
+        <img src="img/uiux/cad-web-verify.jpg" alt="Verification step: region, staff and dealer filters above one dealer's figures, with the full issuing history below." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Check who has responded, then confirm each dealer.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-web-submit.jpg">
+        <img src="img/uiux/cad-web-submit.jpg" alt="Dealer-side submission: an attached target adjustment document ready to send, above a drop area for browsing another file." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Dealers: upload, submit, check status.</figcaption>
+    </figure>
+  </div>
+
+  <p class="muted narrow">
+    The target table is the screen the rest exists to serve. It holds four models against
+    three months and a quarter total for every dealer in a region, and has to stay readable
+    and editable at once — so the visual weight goes almost entirely into the column
+    grouping, and nothing else on the page competes with it.
+  </p>
+
+  <p class="muted narrow">
+    On the phone the same module is built for sales people to scan rather than study, with
+    an edit mode kept one tap away for the corrections that happen away from a desk. Area
+    managers see their own region; head office sees all of it.
+  </p>
+
+  <div class="grid3 grid-even">
+    <figure class="shot">
+      <a href="img/uiux/cad-forecast.jpg">
+        <img src="img/uiux/cad-forecast.jpg" alt="Monthly retail forecast per car model with a total row." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Retail forecast.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-margin.jpg">
+        <img src="img/uiux/cad-margin.jpg" alt="Editable gross margin figures per model, with a save button and an inline note about what the figure excludes." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Edit mode, one tap away.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-pricing.jpg">
+        <img src="img/uiux/cad-pricing.jpg" alt="Competitor pricing grouped by brand and series, expanded to show list and transaction prices." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Competitor pricing.</figcaption>
+    </figure>
+  </div>
+
+  <h3 class="proj-sub">03 &nbsp;POSM management</h3>
+  <p class="muted narrow">
+    Point-of-sale material inspections were a paper procedure. Head office writes the
+    questionnaire on the desktop — one row per item, with its zone, its score weight, the
+    written criteria and the reference photographs. Managers then score a dealer's showroom
+    from their phone, and the dealer reads the result and uploads proof of the fix without
+    anyone printing anything.
+  </p>
+
+  <figure class="shot">
+    <a href="img/uiux/cad-posm-desktop.jpg">
+      <img src="img/uiux/cad-posm-desktop.jpg" alt="POSM questionnaire editor at head office: a table of inspection items with module, zone, points, criteria and a row of reference photographs each." loading="lazy" decoding="async">
+    </a>
+    <figcaption>Head office writes the questionnaire.</figcaption>
+  </figure>
+
+  <div class="grid4 grid-even">
+    <figure class="shot">
+      <a href="img/uiux/cad-posm-checklist.jpg">
+        <img src="img/uiux/cad-posm-checklist.jpg" alt="Audit checklist for one dealer, grouped into showroom, display cars and after-sales area, each with numbered items." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Checklist, grouped by zone.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-posm-score.jpg">
+        <img src="img/uiux/cad-posm-score.jpg" alt="Scoring one item: reference photographs, the written standard and its exceptions, a three-point score, three camera slots and a comment field." loading="lazy" decoding="async">
+      </a>
+      <figcaption>One item: standard, score, evidence.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-posm-scores.jpg">
+        <img src="img/uiux/cad-posm-scores.jpg" alt="Scores by dealer for a quarter, out of 100, with one dealer still marked as awaiting scoring and low scores in red." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Scores by dealer and quarter.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-posm-fix.jpg">
+        <img src="img/uiux/cad-posm-fix.jpg" alt="Rectification view: the auditor's photographs and written finding, then empty camera slots for the dealer's proof of the fix." loading="lazy" decoding="async">
+      </a>
+      <figcaption>The dealer photographs the fix.</figcaption>
+    </figure>
+  </div>
+
+  <p class="muted narrow">
+    An inspection score is a judgement someone has to defend later, so each item carries its
+    reference photograph and written standard right next to the score, and the score is three
+    points rather than a slider. The rectification screen reuses that layout with the roles
+    reversed: the manager's evidence at the top, empty camera slots underneath for the
+    dealer's.
+  </p>
+  <p class="next-case"><a href="yulan.html">Next: Yulan Home →</a></p>
+</section>
+
+<section class="wrap">
+  <div class="narrow">
+    <p class="eyebrow">Contact</p>
+    <h2>Get in touch</h2>
+    <p class="lede">I am open to new work opportunities, including relocation.</p>
+    <div class="btn-row">
+      <a class="btn" href="mailto:luluwhat12@gmail.com">luluwhat12@gmail.com</a>
+      <a class="btn" href="files/cv.pdf">Download CV</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-links">
+    <a href="index.html#work">Work</a>
+    <a href="publications.html">Publications</a>
+    <a href="mailto:luluwhat12@gmail.com">Email</a>
+  </div>
+  <p>© 2026 Lu Liu</p>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-close" type="button" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" type="button" aria-label="Previous image">&#8249;</button>
+  <button class="lb-nav lb-next" type="button" aria-label="Next image">&#8250;</button>
+  <figure class="lb-stage">
+    <img class="lb-img" alt="">
+    <figcaption class="lb-cap"></figcaption>
+  </figure>
+</div>
+
+<script>
+(function () {
+  var box = document.getElementById('lightbox');
+  if (!box) return;
+  var img = box.querySelector('.lb-img');
+  var cap = box.querySelector('.lb-cap');
+  var prev = box.querySelector('.lb-prev');
+  var next = box.querySelector('.lb-next');
+  var close = box.querySelector('.lb-close');
+  var links = [].slice.call(document.querySelectorAll('.shot > a[href]'));
+  if (!links.length) return;
+  var i = 0, lastFocus = null;
+
+  function captionFor(a) {
+    var fc = a.parentNode.querySelector('figcaption');
+    return fc ? fc.textContent.trim() : (a.querySelector('img') || {}).alt || '';
+  }
+  function show(n) {
+    i = (n + links.length) % links.length;
+    var a = links[i];
+    img.src = a.getAttribute('href');
+    img.alt = (a.querySelector('img') || {}).alt || '';
+    cap.textContent = captionFor(a);
+    box.scrollTop = 0;
+    // a tall page shot changes the scroll height once it decodes, so pin it back to the
+    // top — but only if the reader has not already started scrolling, or a slow decode
+    // would yank a long page design back up under them
+    var atTop = function () { if (box.scrollTop < 4) box.scrollTop = 0; };
+    img.decode ? img.decode().then(atTop, function () {}) : (img.onload = atTop);
+  }
+  function open(n, from) {
+    lastFocus = from || null;
+    // un-hide BEFORE show(): scrollTop cannot be set on a display:none element, so
+    // reversing these leaves the overlay wherever the previous image was scrolled to
+    box.hidden = false;
+    box.setAttribute('aria-hidden', 'false');
+    show(n);
+    document.body.style.overflow = 'hidden';
+    close.focus();
+  }
+  function shut() {
+    box.hidden = true;
+    box.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    img.removeAttribute('src');
+    if (lastFocus) lastFocus.focus();
+  }
+
+  links.forEach(function (a, n) {
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      open(n, a);
+    });
+  });
+  close.addEventListener('click', shut);
+  prev.addEventListener('click', function (e) { e.stopPropagation(); show(i - 1); });
+  next.addEventListener('click', function (e) { e.stopPropagation(); show(i + 1); });
+  box.addEventListener('click', function (e) { if (e.target === box || e.target === img.parentNode) shut(); });
+  document.addEventListener('keydown', function (e) {
+    if (box.hidden) return;
+    if (e.key === 'Escape') shut();
+    else if (e.key === 'ArrowLeft') show(i - 1);
+    else if (e.key === 'ArrowRight') show(i + 1);
+    else if (e.key === 'Tab') { e.preventDefault(); close.focus(); }
+  });
+})();
+</script>
+
+</body>
+</html>

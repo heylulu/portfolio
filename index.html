@@ -63,47 +63,47 @@
       <h3>IceRehab</h3>
       <p>Balance game for ankle rehabilitation</p>
     </a>
-    <a class="tcard" href="design-work.html#sensor" data-tags="ui web">
+    <a class="tcard" href="sensor.html" data-tags="ui web">
       <img src="img/teasers/sensor.jpg" width="800" height="800" alt="The sensor monitoring dashboard on a desktop monitor." loading="lazy" decoding="async">
       <h3>Sensor monitoring console</h3>
       <p>Dashboard for a building sensor network</p>
     </a>
-    <a class="tcard" href="design-work.html#cadillac" data-tags="ui web mobile">
+    <a class="tcard" href="cadillac.html" data-tags="ui web mobile">
       <img src="img/teasers/cadillac.jpg" width="800" height="800" alt="The mobile inventory screen of the dealer platform." loading="lazy" decoding="async">
       <h3>Cadillac dealer platform</h3>
       <p>Sales platform for a car dealer network</p>
     </a>
-    <a class="tcard" href="design-work.html#yulan" data-tags="ui web brand">
+    <a class="tcard" href="yulan.html" data-tags="ui web brand">
       <img src="img/teasers/yulan.jpg" width="800" height="800" alt="The top of the Yulan Home homepage." loading="lazy" decoding="async">
       <h3>Yulan Home</h3>
       <p>Online shop for wallpaper, fabric and home accessories</p>
     </a>
-    <a class="tcard" href="design-work.html#voice" data-tags="ui">
+    <a class="tcard" href="voice.html" data-tags="ui">
       <img src="img/teasers/voice.jpg" width="800" height="800" alt="The home screen of the voice assistant, with two isometric scenes." loading="lazy" decoding="async">
       <h3>Voice-controlled home screen</h3>
       <p>Screen for a smart-home voice assistant</p>
     </a>
-    <a class="tcard" href="design-work.html#briefing" data-tags="ui mobile">
+    <a class="tcard" href="briefing.html" data-tags="ui mobile">
       <img src="img/teasers/briefing.jpg" width="800" height="800" alt="The top of the subscriber version of the daily briefing page." loading="lazy" decoding="async">
       <h3>Daily briefing subscription</h3>
       <p>Mobile market briefing with a free and a paid version</p>
     </a>
-    <a class="tcard" href="design-work.html#ilk" data-tags="ui web mobile print">
+    <a class="tcard" href="ilk.html" data-tags="ui web mobile print">
       <img src="img/teasers/ilk.jpg" width="800" height="800" alt="The ilk London category page." loading="lazy" decoding="async">
       <h3>ilk London</h3>
       <p>Online shop for men&#x27;s grooming products</p>
     </a>
-    <a class="tcard" href="design-work.html#industrial" data-tags="ui web mobile">
+    <a class="tcard" href="industrial.html" data-tags="ui web mobile">
       <img src="img/teasers/industrial.jpg" width="800" height="800" alt="The top of the industrial group homepage." loading="lazy" decoding="async">
       <h3>Industrial group website</h3>
       <p>Corporate site for an oil-services group</p>
     </a>
-    <a class="tcard" href="design-work.html#identity" data-tags="brand">
+    <a class="tcard" href="identity.html" data-tags="brand">
       <img src="img/teasers/identity.jpg" width="800" height="800" alt="Four logos: a bakery, a charity travel program, a charity shop and an elder-care service." loading="lazy" decoding="async">
       <h3>Identity marks</h3>
       <p>Logos for small businesses and non-profits</p>
     </a>
-    <a class="tcard" href="design-work.html#posters" data-tags="print">
+    <a class="tcard" href="posters.html" data-tags="print">
       <img src="img/teasers/posters.jpg" width="800" height="800" alt="A campaign poster for a 2015 summer camp." loading="lazy" decoding="async">
       <h3>Posters and product graphics</h3>
       <p>Campaign poster and product graphics</p>
@@ -136,7 +136,7 @@
       or expensive. Before the PhD I designed for SAP, Netease Games, BBH London and Lenovo,
       and independently for startups, an NGO and an industrial IoT company — brand identity
       and visual systems at one end, dense operational dashboards at the other. Some of that
-      work is <a href="design-work.html">collected here</a>.
+      work is <a href="#work">shown above</a>.
     </p>
   </div>
 </section>
@@ -171,16 +171,26 @@
   var bar = document.querySelector('.filters');
   var cards = document.querySelectorAll('.tcard');
   bar.hidden = false;
+  var allBtn = bar.querySelector('[data-filter="all"]');
+  var tagBtns = [].slice.call(bar.querySelectorAll('button[data-filter]:not([data-filter="all"])'));
+  function apply() {
+    var on = tagBtns.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; })
+                    .map(function (b) { return b.dataset.filter; });
+    allBtn.setAttribute('aria-pressed', on.length ? 'false' : 'true');
+    cards.forEach(function (c) {
+      var t = c.dataset.tags.split(' ');
+      c.hidden = on.length > 0 && !on.some(function (f) { return t.indexOf(f) !== -1; });
+    });
+  }
   bar.addEventListener('click', function (e) {
     var btn = e.target.closest('button[data-filter]');
     if (!btn) return;
-    var f = btn.dataset.filter;
-    bar.querySelectorAll('button').forEach(function (b) {
-      b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-    });
-    cards.forEach(function (c) {
-      c.hidden = f !== 'all' && c.dataset.tags.split(' ').indexOf(f) === -1;
-    });
+    if (btn === allBtn) {
+      tagBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+    } else {
+      btn.setAttribute('aria-pressed', btn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    }
+    apply();
   });
 })();
 </script>

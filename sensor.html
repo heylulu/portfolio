@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sensor monitoring console — Lu Liu</title>
+<meta name="description" content="Dashboard for a building sensor network.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-name" href="index.html">Lu Liu</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="publications.html">Publications</a>
+      <a href="files/cv.pdf">CV</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- TODO Lu: add client / employer / year here if you want it named. -->
+<section class="proj proj-page wrap">
+  <p class="back"><a href="index.html#work">← All work</a></p>
+  <div class="proj-head">
+    <p class="proj-kind">Product UI · Web application</p>
+    <h1>Sensor monitoring console</h1>
+    <p class="muted">
+      A console for a building sensor network — smoke, PM2.5, temperature, humidity and
+      combined units across many sites. The home view answers the only question an
+      operator has on opening it: what is wrong and where. Counts by sensor type across
+      the top, a map with the sites plotted, connection status per type as a ratio rather
+      than a percentage, and today's alarms as a list you can read without clicking.
+    </p>
+    <p class="muted">
+      Behind it sits the unglamorous half: device, customer, user and user-group
+      management, and an alert-rule editor, all built on one table-and-form pattern so
+      that learning one screen teaches you the rest.
+    </p>
+    <div class="tags">
+      <span class="tag">Dashboard</span>
+      <span class="tag">Data density</span>
+      <span class="tag">Admin flows</span>
+      <span class="tag">IoT</span>
+    </div>
+  </div>
+
+  <figure class="shot">
+    <a href="img/uiux/iot-dashboard.jpg">
+      <img src="img/uiux/iot-dashboard.jpg" alt="Monitoring dashboard: colored counts for five sensor types, a map of device locations, connection-status rings, an alarm log and a device list.">
+    </a>
+    <figcaption>Operator home view.</figcaption>
+  </figure>
+
+  <div class="grid2">
+    <figure class="shot">
+      <a href="img/uiux/iot-devices.jpg">
+        <img src="img/uiux/iot-devices.jpg" alt="Device list screen with filters and per-device status." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Device list.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/iot-alarms.jpg">
+        <img src="img/uiux/iot-alarms.jpg" alt="Alarm records screen with time, content, severity and type columns." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Alarm records.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/iot-rules.jpg">
+        <img src="img/uiux/iot-rules.jpg" alt="Alert rule editor with threshold and notification settings." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Alert-rule editor.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/iot-mockup.jpg">
+        <img src="img/uiux/iot-mockup.jpg" alt="The console shown on a desktop monitor in an office setting." loading="lazy" decoding="async">
+      </a>
+      <figcaption>In place.</figcaption>
+    </figure>
+  </div>
+  <p class="next-case"><a href="cadillac.html">Next: Cadillac dealer platform →</a></p>
+</section>
+
+<section class="wrap">
+  <div class="narrow">
+    <p class="eyebrow">Contact</p>
+    <h2>Get in touch</h2>
+    <p class="lede">I am open to new work opportunities, including relocation.</p>
+    <div class="btn-row">
+      <a class="btn" href="mailto:luluwhat12@gmail.com">luluwhat12@gmail.com</a>
+      <a class="btn" href="files/cv.pdf">Download CV</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-links">
+    <a href="index.html#work">Work</a>
+    <a href="publications.html">Publications</a>
+    <a href="mailto:luluwhat12@gmail.com">Email</a>
+  </div>
+  <p>© 2026 Lu Liu</p>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-close" type="button" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" type="button" aria-label="Previous image">&#8249;</button>
+  <button class="lb-nav lb-next" type="button" aria-label="Next image">&#8250;</button>
+  <figure class="lb-stage">
+    <img class="lb-img" alt="">
+    <figcaption class="lb-cap"></figcaption>
+  </figure>
+</div>
+
+<script>
+(function () {
+  var box = document.getElementById('lightbox');
+  if (!box) return;
+  var img = box.querySelector('.lb-img');
+  var cap = box.querySelector('.lb-cap');
+  var prev = box.querySelector('.lb-prev');
+  var next = box.querySelector('.lb-next');
+  var close = box.querySelector('.lb-close');
+  var links = [].slice.call(document.querySelectorAll('.shot > a[href]'));
+  if (!links.length) return;
+  var i = 0, lastFocus = null;
+
+  function captionFor(a) {
+    var fc = a.parentNode.querySelector('figcaption');
+    return fc ? fc.textContent.trim() : (a.querySelector('img') || {}).alt || '';
+  }
+  function show(n) {
+    i = (n + links.length) % links.length;
+    var a = links[i];
+    img.src = a.getAttribute('href');
+    img.alt = (a.querySelector('img') || {}).alt || '';
+    cap.textContent = captionFor(a);
+    box.scrollTop = 0;
+    // a tall page shot changes the scroll height once it decodes, so pin it back to the
+    // top — but only if the reader has not already started scrolling, or a slow decode
+    // would yank a long page design back up under them
+    var atTop = function () { if (box.scrollTop < 4) box.scrollTop = 0; };
+    img.decode ? img.decode().then(atTop, function () {}) : (img.onload = atTop);
+  }
+  function open(n, from) {
+    lastFocus = from || null;
+    // un-hide BEFORE show(): scrollTop cannot be set on a display:none element, so
+    // reversing these leaves the overlay wherever the previous image was scrolled to
+    box.hidden = false;
+    box.setAttribute('aria-hidden', 'false');
+    show(n);
+    document.body.style.overflow = 'hidden';
+    close.focus();
+  }
+  function shut() {
+    box.hidden = true;
+    box.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    img.removeAttribute('src');
+    if (lastFocus) lastFocus.focus();
+  }
+
+  links.forEach(function (a, n) {
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      open(n, a);
+    });
+  });
+  close.addEventListener('click', shut);
+  prev.addEventListener('click', function (e) { e.stopPropagation(); show(i - 1); });
+  next.addEventListener('click', function (e) { e.stopPropagation(); show(i + 1); });
+  box.addEventListener('click', function (e) { if (e.target === box || e.target === img.parentNode) shut(); });
+  document.addEventListener('keydown', function (e) {
+    if (box.hidden) return;
+    if (e.key === 'Escape') shut();
+    else if (e.key === 'ArrowLeft') show(i - 1);
+    else if (e.key === 'ArrowRight') show(i + 1);
+    else if (e.key === 'Tab') { e.preventDefault(); close.focus(); }
+  });
+})();
+</script>
+
+</body>
+</html>
